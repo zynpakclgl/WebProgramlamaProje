@@ -1,0 +1,44 @@
+﻿@model IEnumerable<WebProje.Controllers.ArabaDTO>
+
+@{
+    ViewData["Title"] = "Arabalar";
+}
+
+<div class="container">
+
+    @foreach (var item in Model)
+    {
+        <div class="row">
+
+            <img src="@item.Fotograf" class="d-block w-100 h-100">
+
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <div class="col-6">
+                    <br /><br />
+                    SaticiAdSoyad  : @item.SaticiAdSoyad  <br />
+                    IlanNo         : @item.IlanNo <br />
+                    MarkaAdi       : @item.MarkaAdi <br />
+                    ArabaModeli    : @item.ArabaModeli <br />
+                    Yil            : @item.Yil <br />
+                    Yakit          : @item.Yakit <br />
+                    Vites          : @item.Vites<br />
+                    MotorGücü      : @item.MotorGücü<br />
+                    MotorHacmi     : @item.MotorHacmi<br />
+                    Km             : @item.Km<br />
+                    RenkAdi        : @item.RenkAdi<br />
+                    KasaTipiAdi    : @item.KasaTipiAdi<br />
+                    CekisAdi       : @item.CekisAdi<br />
+                    Plaka          : @item.Plaka<br />
+                    Durumu         : @item.Durumu<br />
+                    Fiyat          : @item.Fiyat<br />
+                    <br /><br /><br />
+                </div>
+            </div>
+            
+        </div>
+    }
+
+</div>

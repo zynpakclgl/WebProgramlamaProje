@@ -1,0 +1,132 @@
+﻿@model IEnumerable<WebProje.Models.Araba>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IlanNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Yil)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Yakit)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Vites)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MotorGücü)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MotorHacmi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Km)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Plaka)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Durumu)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fiyat)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fotograf)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ArabaModel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KasaTipi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cekis)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Renk)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Satici)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Marka)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IlanNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Yil)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Yakit)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Vites)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MotorGücü)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MotorHacmi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Km)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Plaka)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Durumu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fiyat)
+            </td>
+            <td>
+                @*@Html.DisplayFor(modelItem => item.Fotograf)*@
+                <img src="@Url.Content(item.Fotograf)" class="d-block w-50" asp-append-version="true" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ArabaModel.ArabaModelAd)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KasaTipi.KasaTipiAd)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cekis.CekisAd)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Renk.RenkAd)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Satici.AdSoyad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Marka.MarkaAd)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

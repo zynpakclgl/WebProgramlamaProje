@@ -1,0 +1,70 @@
+﻿@model IEnumerable<WebProje.Models.Araba>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+<br />
+<br />
+<!-- Sliderlar-->
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    
+    <div class="carousel-inner">
+        
+
+        @foreach (var item in Model)
+        {
+            <div class="@(item.IlanNo==1 ? "carousel-item active" : "carousel-item")">
+                <img src="@item.Fotograf" class="d-block w-100 h-100 " />
+
+            </div>
+            
+        }
+
+    </div>
+
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+<br />
+<!-- 3 kutulu alan -->
+<div class="row">
+    <div class="col-lg-4 mb-4">
+        <div class="card h-100">
+            <h4 class="card-header">Arabalar</h4>
+            <div class="card-body">
+                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
+            </div>
+            <div class="card-footer">
+                <a href="#" class="btn btn-primary">Learn More</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4 mb-4">
+        <div class="card h-100">
+            <h4 class="card-header">Satılanlar</h4>
+            <div class="card-body">
+                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis ipsam eos, nam perspiciatis natus commodi similique totam consectetur praesentium molestiae atque exercitationem ut consequuntur, sed eveniet, magni nostrum sint fuga.</p>
+            </div>
+            <div class="card-footer">
+                <a href="#" class="btn btn-primary">Learn More</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4 mb-4">
+        <div class="card h-100">
+            <h4 class="card-header">Yorumlar</h4>
+            <div class="card-body">
+                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis ipsam eos, nam perspiciatis natus commodi similique totam consectetur praesentium molestiae atque exercitationem ut consequuntur, sed eveniet, magni nostrum sint fuga.</p>
+            </div>
+            <div class="card-footer">
+                <a href="#" class="btn btn-primary">Learn More</a>
+            </div>
+        </div>
+    </div>
+</div>

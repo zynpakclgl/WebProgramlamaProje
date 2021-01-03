@@ -1,0 +1,108 @@
+﻿@model WebProje.Models.Araba
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Araba</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="IlanNo" class="control-label"></label>
+                <input asp-for="IlanNo" class="form-control" />
+                <span asp-validation-for="IlanNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MarkaId" class="control-label"></label>
+                <select asp-for="MarkaId" class ="form-control" asp-items="ViewBag.MarkaId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="ArabaModelId" class="control-label"></label>
+                <select asp-for="ArabaModelId" class ="form-control" asp-items="ViewBag.ArabaModelId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Yil" class="control-label"></label>
+                <input asp-for="Yil" class="form-control" />
+                <span asp-validation-for="Yil" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Yakit" class="control-label"></label>
+                <input asp-for="Yakit" class="form-control" />
+                <span asp-validation-for="Yakit" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Vites" class="control-label"></label>
+                <input asp-for="Vites" class="form-control" />
+                <span asp-validation-for="Vites" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MotorGücü" class="control-label"></label>
+                <input asp-for="MotorGücü" class="form-control" />
+                <span asp-validation-for="MotorGücü" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MotorHacmi" class="control-label"></label>
+                <input asp-for="MotorHacmi" class="form-control" />
+                <span asp-validation-for="MotorHacmi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Km" class="control-label"></label>
+                <input asp-for="Km" class="form-control" />
+                <span asp-validation-for="Km" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RenkId" class="control-label"></label>
+                <select asp-for="RenkId" class ="form-control" asp-items="ViewBag.RenkId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="KasaTipiId" class="control-label"></label>
+                <select asp-for="KasaTipiId" class ="form-control" asp-items="ViewBag.KasaTipiId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="CekisId" class="control-label"></label>
+                <select asp-for="CekisId" class ="form-control" asp-items="ViewBag.CekisId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Plaka" class="control-label"></label>
+                <input asp-for="Plaka" class="form-control" />
+                <span asp-validation-for="Plaka" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Durumu" class="control-label"></label>
+                <input asp-for="Durumu" class="form-control" />
+                <span asp-validation-for="Durumu" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Fiyat" class="control-label"></label>
+                <input asp-for="Fiyat" class="form-control" />
+                <span asp-validation-for="Fiyat" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Fotograf" class="control-label"></label>
+                @*<input asp-for="Fotograf" class="form-control" />*@
+                <input type="file" class="form-control" name="files" />
+                <span asp-validation-for="Fotograf" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SaticiId" class="control-label"></label>
+                <select asp-for="SaticiId" class ="form-control" asp-items="ViewBag.SaticiId"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
